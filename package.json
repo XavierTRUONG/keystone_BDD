@@ -1,0 +1,33 @@
+{
+  "name": "keystone-films",
+  "version": "1.0.0",
+  "description": "BDD images keystone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=dev nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lerieur777/keystone_BDD.git"
+  },
+  "author": "Xavier TRUONG",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lerieur777/keystone_BDD/issues"
+  },
+  "homepage": "https://github.com/Lerieur777/keystone_BDD#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^15.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-promise-router": "^4.1.1",
+    "http-server": "^14.1.0",
+    "mariadb": "^2.5.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
