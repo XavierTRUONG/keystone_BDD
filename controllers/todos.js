@@ -112,12 +112,11 @@ module.exports = {
 
 // getAllUsers ---------------------------------------------------------------------------------------------------------------------------------------
 
-    getAllUsers: async(req, res) => {
-        const { email, password} = req.body;
+    getAllUsers: async(_, res) => {
         let connexion;
         try {
             connexion = await connexion.getConnection();
-            const result = await result.query(`CALL getAllUsers(?, ?)`, [email, password]);
+            const result = await result.query(`CALL getAllUsers`);
             console.log(result);
             return res.status(200).json({success: result});
         } catch (error) {
