@@ -7,7 +7,7 @@ const cors = require("cors"); // importe le paquet cors
 
 const app = express();
 
-
+app.use('/static',express.static('decors'));
 app.use(cors()) // permet de parcer(analyser) toutes les requêtes en cors
 app.use(express.json()); // permet de parcer(analyser) toutes les requêtes en json
 
