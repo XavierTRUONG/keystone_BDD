@@ -17,7 +17,7 @@ BEGIN
         PRENOM_UTILISATEUR,
         NOM_UTILISATEUR,
         MAIL_UTILISATEUR,
-        PASSWORD_UTILISATEUR
+        MOT_DE_PASSE_UTILISATEUR
     )
     VALUES 
     (
@@ -86,11 +86,11 @@ END //
 
 CREATE OR REPLACE PROCEDURE updateUserById 
 (
-    IN p_id_utilisateur BIGINT,
     IN p_prenom VARCHAR(255),
     IN p_nom VARCHAR(255), 
     IN p_email VARCHAR(255), 
-    IN p_password VARCHAR(255)
+    IN p_password VARCHAR(255),
+    IN p_id_utilisateur INT
 )
 BEGIN
     UPDATE 
@@ -99,7 +99,7 @@ BEGIN
         PRENOM_UTILISATEUR = p_prenom,
         NOM_UTILISATEUR = p_nom,
         MAIL_UTILISATEUR = p_email,
-        PASSWORD_UTILISATEUR = p_password,
+        MOT_DE_PASSE_UTILISATEUR = p_password
     WHERE 
         ID_UTILISATEUR = p_id_utilisateur;
 END //
@@ -120,7 +120,7 @@ END//
 
 -- deleteUser -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-CREATE OR REPLACE PROCEDURE deleteImage 
+CREATE OR REPLACE PROCEDURE deleteUser
 (
     IN p_id_utilisateur BIGINT
 )
@@ -135,19 +135,15 @@ END//
 -- getAllUsers -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 CREATE OR REPLACE PROCEDURE getAllUsers
-(
-    IN p_email VARCHAR(255),
-    IN p_password VARCHAR(255)
-)
+()
 BEGIN
-SELECT *
-FROM 
-    UTILISATEUR
+    SELECT
+        *
+    FROM 
+        UTILISATEUR;
 END //
 
 -- getImageByName -------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 
 
 
