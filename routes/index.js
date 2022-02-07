@@ -1,6 +1,6 @@
 const router = require("express-promise-router")();
 
-const { insertUser, insertImage, updateImageById, updateUserById, deleteImage, deleteUser, getAllUsers } = require("../controllers/todos");
+const { insertUser, insertImage, updateImageById, updateUserById, deleteImage, deleteUser, getAllUsers } = require("../controllers");
 
 
 router.route('/todos')
