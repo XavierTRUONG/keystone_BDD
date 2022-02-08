@@ -1,19 +1,24 @@
 const router = require("express-promise-router")();
 
-const { insertUser, insertImage, updateImageById, updateUserById, deleteImage, deleteUser, getAllUsers } = require("../controllers");
+const { insertUser, insertImage, updateImageById, updateUserById, deleteImageById, deleteUserById, getAllUsers } = require("../controllers");
 
 
-router.route('/todos')
+router.route('/users')
     .post(insertUser)
-    .post(insertImage)
-    .delete(deleteImage)
-    .delete(deleteUser)
     .get(getAllUsers);
 
+router.route('/images')
+    .post(insertImage)
 
-router.route('/todos/:id')
+    
+router.route('/users/:id')
+    .put(updateUserById)
+    .delete(deleteUserById);
+
+router.route('/images/:id')
     .put(updateImageById)
-    .put(updateUserById);
+    .delete(deleteImageById)
+
 
 
 module.exports = router;

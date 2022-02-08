@@ -17,7 +17,7 @@ app.use(express.json()); // permet de parcer(analyser) toutes les requêtes en j
 const todosRoute = require('./routes/index'); // import ce qui est exporter dans l'index
 
 
-app.use('/api', todosRoute); // rajoute sur le chemin un router supplémentaire et un préfixe /api avant /testRoute
+app.use('/api', todosRoute); // rajoute sur le chemin un router supplémentaire et un préfixe /api avant /todosRoute
 app.get('/api', (_,res) => res.send("Hello from keystone BDD v1")); // Ecoute la methode GET et la route "/"
 app.post('/uploadFile', upload.single('avatar'), ( _, res) => {
     res.send("208")

@@ -86,11 +86,11 @@ END //
 
 CREATE OR REPLACE PROCEDURE updateUserById 
 (
+    IN p_id_utilisateur INT,
     IN p_prenom VARCHAR(255),
     IN p_nom VARCHAR(255), 
     IN p_email VARCHAR(255), 
-    IN p_password VARCHAR(255),
-    IN p_id_utilisateur INT
+    IN p_password VARCHAR(255)
 )
 BEGIN
     UPDATE 
