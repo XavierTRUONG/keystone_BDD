@@ -1,0 +1,21 @@
+.box-card1 {
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    left: 22%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #BC5939;
+    border-radius: 15px;
+}
+
+p {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: Zen Tokyo Zoo;
+    font-size: 48px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #000000;
+}
