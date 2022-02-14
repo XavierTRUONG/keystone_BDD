@@ -1,0 +1,29 @@
+.searchInp {
+    display: block;
+    outline: none;
+    position: relative;
+    width: 850px;
+    height: 45px;
+    left: 350px;
+    top: 48px;
+    background: none;
+    border: none;
+    font-size: 25px;
+}
+.container {
+    position: relative;
+    left: 300px;
+    top: 98px;
+    width: 950px;
+    height: 55px;
+    background: #D9DBD8;
+    border-radius: 9999px;
+}
+.logo-glass {
+    width: 25px;
+    height: 25px;
+    color: #708199;
+    position: relative;
+    left: 320px;
+    top: 57px;
+}

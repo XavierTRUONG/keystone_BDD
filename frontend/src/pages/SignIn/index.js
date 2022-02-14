@@ -1,6 +1,6 @@
-import Card1 from '../components/Card1';
-import Card2 from '../components/Card2';
-import './SignIn.css';
+import Card1 from '../../components/Card1';
+import Card2 from '../../components/Card2';
+import './index.css';
 
 const SignIn = () => {
     return (
