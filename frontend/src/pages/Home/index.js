@@ -10,6 +10,7 @@ const Home = () => {
             <Search/>
             <Burger/>
             <div className="ligne-home"></div>
+            <img src="http://localhost:7000/static/ecosse(5).jpg" alt="batiment ecosse" />
         </div>
     )
 }

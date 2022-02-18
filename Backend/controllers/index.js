@@ -2,6 +2,7 @@ const pool = require("../config/database");
 
 module.exports = {
 
+
 // insertUser ---------------------------------------------------------------------------------------------------------------------------------------
 
     insertUser: async(req, res) => {
