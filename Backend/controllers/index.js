@@ -1,4 +1,5 @@
 const pool = require("../config/database");
+const {imageUpload} = require ('../middlewares/multer')
 
 module.exports = {
 
@@ -20,7 +21,15 @@ module.exports = {
             if (connexion) connexion.end();
         }
     },
-
+    upload: (req, res, next) => {
+        imageUpload.single(req, res, (err) => {
+            if(err) {
+              return res.status(400).send("Something went wrong!");
+             }
+             // return res.send(req.file);
+             return next(null, req);
+        })
+    },
 // insertImage ---------------------------------------------------------------------------------------------------------------------------------------
 
     insertImage: async (req, res) => {

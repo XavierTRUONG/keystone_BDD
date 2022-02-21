@@ -1,6 +1,6 @@
 const router = require("express-promise-router")();
 
-const { insertUser, insertImage, updateImageById, updateUserById, deleteImageById, deleteUserById, getAllUsers} = require("../controllers");
+const { insertUser, insertImage, updateImageById, updateUserById, deleteImageById, deleteUserById, getAllUsers, upload} = require("../controllers");
 
 // Users ------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -14,12 +14,13 @@ router.route('/users/:id')
 
 // Images ------------------------------------------------------------------------------------------------------------------------------------------
 
-
-router.route('/images')
-    .post(insertImage);
-
 router.route('/images/:id')
     .put(updateImageById)
     .delete(deleteImageById);
+
+// UploadImage ------------------------------------------------------------------------------------------------------------------------------------------
+
+router.route('/')
+    .post(upload, insertImage);
 
 module.exports = router;
