@@ -20,7 +20,7 @@ router.route('/images/:id')
 
 // UploadImage ------------------------------------------------------------------------------------------------------------------------------------------
 
-router.route('/')
+router.route('/uploadImage')
     .post(upload, insertImage);
 
 module.exports = router;

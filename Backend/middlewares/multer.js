@@ -1,8 +1,8 @@
 const multer = require('multer'); // importe le paquet multer
 
 let storage = multer.diskStorage({   
-    destination: function(_, _, cb) { 
-       cb(null, './public/images');    
+    destination: function(req, _, cb) { 
+       cb(null, '../../public/images');    
     }, 
     filename: function (_, file, cb) { 
        cb(null , file.originalname);   
