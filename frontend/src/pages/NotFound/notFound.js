@@ -1,4 +1,4 @@
-import './index.css';
+import './notFound.css';
 
 
 const NotFound = () => {

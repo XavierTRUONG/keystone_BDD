@@ -3,9 +3,9 @@ import React from 'react';
 
 import './App.css';
 
-import Home from './pages/Home';
-import SignIn from './pages/SignIn';
-import NotFound from './pages/NotFound';
+import Home from './pages/Home/home';
+import SignIn from './pages/SignIn/signIn';
+import NotFound from './pages/NotFound/notFound';
 
 
 

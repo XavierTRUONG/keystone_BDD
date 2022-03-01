@@ -25,9 +25,9 @@ module.exports = {
 // upload ---------------------------------------------------------------------------------------------------------------------------------------
 
     upload: (req, res, next) => {
-        imageUpload.single(req, res, (err) => {
+        imageUpload.single('file')(req, res, (err) => {
             if(err) {
-              return res.status(400).send("Something went wrong!");
+              return res.status(400).send(err.message);
              }
              // return res.send(req.file);
              return next(null, req);
@@ -37,11 +37,12 @@ module.exports = {
 // insertImage ---------------------------------------------------------------------------------------------------------------------------------------
 
     insertImage: async (req, res) => {
-        const { description, ville, pays, code_postal, nom} = req.body;
+        const { description, ville, pays, code_postal} = req.body;
+        const {file} = req;
         let connexion;
         try {
             connexion = await pool.getConnection();
-            const result = await connexion.query("CALL insertNewImage (?, ?, ?, ?, ?)", [description, ville, pays, code_postal, nom]);
+            const result = await connexion.query("CALL insertNewImage (?, ?, ?, ?, ?)", [description, ville, pays, code_postal, file.filename]);
             return res.status(200).json({ success: result })
         } catch (error) {
             return res.status(400).json({ error: error.message});
