@@ -16,7 +16,11 @@ const Home = () => {
             <h2 className='titre'>KEYSTONE FILMS</h2>
             <>
                 <Search/>
-                <div className={toggle ? "box animated" : "box"}></div>
+                <div className={toggle ? "box animated" : "box"}>
+                    <ul>
+                        <li className='list-item'><a href="http://localhost:3000/">Ajouter une image</a></li>
+                    </ul>
+                </div>
                 <button onClick={changeState}><FontAwesomeIcon icon={faBars} class='logo-burger btn1'></FontAwesomeIcon></button>
             </>
             <div className="ligne-home"></div>
