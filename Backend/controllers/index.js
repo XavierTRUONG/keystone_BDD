@@ -6,12 +6,12 @@ module.exports = {
 
 // insertUser ---------------------------------------------------------------------------------------------------------------------------------------
 
-    insertUser: async(req, res) => {
+    insertNewUser: async(req, res) => {
         const {prenom, nom, email, password} = req.body;
         let connexion;
         try {
             connexion = await pool.getConnection();
-            const result = await connexion.query('CALL insertNewUser(?, ?, ?, ?)', [prenom, nom, email, password]);
+            const result = await connexion.query('CALL InsertNewUser(?, ?, ?, ?)', [prenom, nom, email, password]);
             console.log(result);
             return res.status(200).json({success: result});
         } catch (error) {
@@ -140,5 +140,24 @@ module.exports = {
         } finally {
             if (connexion) connexion.end();
         }
-    }
+    },
+
+// identificationUser ---------------------------------------------------------------------------------------------------------------------------------------
+
+    identificationUser: async(req, res) => {
+        const { email, password}  = req.body;
+        let connexion;
+        try {
+          connexion = await pool.getConnection();
+          const result = await connexion.query('CALL identificationUser (?, ?)', [email, password]);
+        if (!result[0].length) {
+          res.status(401).json({ error: "Identifiant Invalide" });
+        }
+        return res.status(200).json({ success: result });
+      } catch (error) {
+        return res.status(400).json({ error: error.message });
+      } finally {
+        if (connexion) connexion.end();
+      }
+    },
 }

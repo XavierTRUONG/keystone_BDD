@@ -4,7 +4,7 @@ DELIMITER //
 
 -- insertNewUser -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-CREATE OR REPLACE PROCEDURE insertNewUser 
+CREATE OR REPLACE PROCEDURE InsertNewUser
 (
     IN p_prenom VARCHAR(255),
     IN p_nom VARCHAR(255), 
@@ -24,7 +24,7 @@ BEGIN
         p_prenom, 
         p_nom, 
         p_email, 
-        p_password
+        SHA2(p_password, 512)
     );
 END //
 
@@ -142,6 +142,18 @@ BEGIN
     FROM 
         UTILISATEUR;
 END //
+
+-- identificationUser -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE OR REPLACE PROCEDURE identificationUser (IN p_email VARCHAR(255),IN p_password VARCHAR(255))
+BEGIN
+SELECT ID_UTILISATEUR
+FROM UTILISATEUR
+WHERE MAIL_UTILISATEUR = p_email
+AND MOT_DE_PASSE_UTILISATEUR = SHA2(p_password, 512);
+END //
+
+
 
 
 
